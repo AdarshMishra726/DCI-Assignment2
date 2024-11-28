@@ -18,7 +18,4 @@ steps:
 
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['compute', 'instances', 'reset', 'flask-instance', '--zone', 'us-central1-a']
-
-options:
-  logging: CLOUD_LOGGING_ONLY
 >>>>>>> 0f5295145d3948c76f3dcf0533f28a1355d00098
