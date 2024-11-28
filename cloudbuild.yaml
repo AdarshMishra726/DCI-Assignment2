@@ -1,0 +1,12 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/mineral-effect-426218-j3/mishraapp:latest', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/mineral-effect-426218-j3/mishraapp:latest']
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['compute', 'instances', 'reset', 'flask-instance', '--zone', 'us-central1-a']
+
+options:
+  logging: CLOUD_LOGGING_ONLY
